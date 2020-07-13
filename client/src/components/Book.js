@@ -5,6 +5,7 @@ import API from '../utils/API'
 export default function Book({ title, authors, synopsis, image, link, googleId, id}) {
 
     function save() {
+        alert('saved!')
         API.saveBook({ title, authors, synopsis, image, link, googleId })
     }
 
