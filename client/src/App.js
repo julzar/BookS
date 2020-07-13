@@ -1,26 +1,29 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Jumbotron from './components/Jumbotron'
+import SearchBooks from './pages/SearchBooks'
+// import SavedBooks from './pages/SavedBooks'
+import NavTabs from './components/NavTabs'
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { Container } from 'reactstrap';
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        <Jumbotron />
+        <Route exact path={['/', '/search']}>
+          {/* <SearchBooks /> */}
+          <Container>
+          < NavTabs />
+          </Container>
+        </Route>
+        {/* <Route exact path='/saved'>
+          <SavedBooks />
+        </Route> */}
+      </Router>
     </div>
-  );
+  )
 }
 
 export default App;
