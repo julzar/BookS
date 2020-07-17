@@ -40,6 +40,7 @@ export default function SearchBooks() {
     }
 
     function handleChange(e) {
+        e.preventDefault()
         const { value } = e.target
         setSearch(value.trim())
     }
