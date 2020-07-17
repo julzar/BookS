@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react'
 
-import { Container } from 'reactstrap'
-
 import API from '../utils/API'
 
 import Search from '../components/Search'
@@ -48,12 +46,10 @@ export default function SearchBooks() {
 
     return (
         <div>
-            {/* <Container> */}
             <Search handleChange={handleChange} />
             <div>
             {renderBooks()}
             </div>
-            {/* </Container> */}
         </div>
     )
 }

@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react"
 import API from "../utils/API"
 import Book from "../components/Book"
 import NotFound from "../components/NotFound"
-import Search from '../components/Search'
+// import Search from '../components/Search'
 
 export default function Saved() {
   const [savedBooks, setSavedBooks] = useState([])
@@ -15,7 +15,7 @@ export default function Saved() {
   }, [])
 
   function renderBooks() {
-    if (!savedBooks) {
+    if (savedBooks === []) {
         return (
             <NotFound />
         )
@@ -37,7 +37,7 @@ export default function Saved() {
 
   return (
     <div>
-        <Search />
+        {/* <Search /> */}
         <div>
             {renderBooks()}
         </div>
